@@ -45,7 +45,7 @@ module Paypal
       end
 
       def transaction_details(transaction_id)
-        response = self.request :GetTransactionDetails, {:TRANSACTIONID=> transaction_id}
+        response = self.request :GetTransactionDetails, {:TRANSACTIONID=> transaction_id, :version => Paypal.api_version}
         Response.new response
       end
 
